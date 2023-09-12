@@ -30,8 +30,6 @@ const validate = (validations) => {
 const validateCedula = async (dni) => {
   try {
     const response = validateDocument.getValidateDocument('cedula', dni);
-    console.log('response');
-    console.log(response);
     if (response.status === 'ERROR') {
       return Promise.reject('Cedula invalida');
     }

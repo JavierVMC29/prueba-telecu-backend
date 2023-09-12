@@ -6,12 +6,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
 
-var indexRouter = require('./routes/index');
-var departamentosRouter = require('./routes/departamentos');
-var visitantesRouter = require('./routes/visitantes');
-var visitasRouter = require('./routes/visitas');
-var loginRouter = require('./routes/login');
-
 const { errorHandler, invalidPathHandler } = require('./error');
 
 const authMiddleware = require('./middlewares/auth');
@@ -49,6 +43,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+var indexRouter = require('./routes/index');
+var departamentosRouter = require('./routes/departamentos');
+var visitantesRouter = require('./routes/visitantes');
+var visitasRouter = require('./routes/visitas');
+var loginRouter = require('./routes/login');
 
 app.use('/', indexRouter);
 app.use('/api/departamentos', authMiddleware, departamentosRouter);
