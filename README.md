@@ -32,7 +32,7 @@ DATABASE_DIALECT=mysql
 3. Abrir una terminal en la raíz del proyecto y ejecutar los siguientes comandos:
 ```shell
 npm install
-npm run dev
+npm start
 ```
 
 
